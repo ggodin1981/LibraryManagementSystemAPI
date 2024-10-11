@@ -18,7 +18,7 @@ We'll organize the project into different layers:
    - Provide a way to access the single instance of the Library Service class.
 
  - **Domain Layer**  
-   -**Entities** Create a folder named Domain and define the Book entity.
+    - **Entities** Create a folder named Domain and define the Book entity.
 ```csharp
  // Domain/Entities/Book.cs
 public class Book
