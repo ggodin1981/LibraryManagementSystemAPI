@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "1QtTJ9b2xD1VBeAUCD/EtDsnT8UePn5FyVeZK12P76gBL0ebWMsqzY4bK1GBU8KOjqjf9uPy4WDq5vApax+LSg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\GGTECH I.T. Solution\\source\\repos\\LibraryManagementSystemAPI\\LibraryManagementSystemAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\GGTECH I.T. Solution\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\GGTECH I.T. Solution\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
+    "C:\\Users\\GGTECH I.T. Solution\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
+    "C:\\Users\\GGTECH I.T. Solution\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.8.1\\swashbuckle.aspnetcore.annotations.6.8.1.nupkg.sha512",
+    "C:\\Users\\GGTECH I.T. Solution\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.8.1\\swashbuckle.aspnetcore.swagger.6.8.1.nupkg.sha512",
+    "C:\\Users\\GGTECH I.T. Solution\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.8.1\\swashbuckle.aspnetcore.swaggergen.6.8.1.nupkg.sha512",
+    "C:\\Users\\GGTECH I.T. Solution\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.6.2\\swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512"
+  ],
+  "logs": []
+}
