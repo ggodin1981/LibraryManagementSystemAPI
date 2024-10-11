@@ -9,13 +9,13 @@ We'll organize the project into different layers:
 1. **Domain Layer** 
    - Contains core business logic and entities.
 2. **Application Layer**
-  - Contains application logic and interfaces.
+   - Contains application logic and interfaces.
 3. **Infrastructure Layer**
- - Implements data access and repositories.
+   - Implements data access and repositories.
 4. **Presentation Layer**
- - Contains API controllers.
+   - Contains API controllers.
 5. **Access the Singleton Instance**
- - Provide a way to access the single instance of the Library Service class.
+   - Provide a way to access the single instance of the Library Service class.
 
  - **Domain Layer**  
    -**Entities** Create a folder named Domain and define the Book entity.
