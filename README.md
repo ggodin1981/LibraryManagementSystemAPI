@@ -35,7 +35,6 @@ public class Book
   **Interfaces** 
   
 ```csharp
-
 public interface IBookRepository
 {
     void Add(Book book);
@@ -44,13 +43,13 @@ public interface IBookRepository
     void Update(Book book);
 }
 ```
+
 2.) **Application Layer** 
  
 	**Services** 
 	- Create a folder named Application and define a service for library operations.
     
 ```csharp
-
 public class LibraryService : ILibraryService
 {
     private readonly IBookRepository _bookRepository;
