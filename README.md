@@ -19,7 +19,7 @@ We'll organize the project into different layers:
 
 1.)  **Domain Layer** 
 
-    **Entities** 
+   **Entities** 
    - Create a folder named Domain and define the Book entity.
    
 ```csharp  
@@ -46,10 +46,9 @@ public interface IBookRepository
 
 2.) **Application Layer** 
  
-    <strong>Services</strong>
-    **Services** 
-   - Create a folder named Application and define a service for library operations.
-    
+   **Services** 
+   - Create a folder named Application and define a service for library operations.    
+	
 ```csharp
 public class LibraryService : ILibraryService
 {
@@ -124,7 +123,7 @@ public class LibraryService : ILibraryService
 
  **DTOs**
 
-   ** Create a DTO for book operations.**
+ **Create a DTO for book operations.**
    
 ```csharp
 public class BookDto
@@ -137,8 +136,8 @@ public class BookDto
  
 3.) **Infrastructure Layer**
 
-    **In-Memory Repository** 
-	 - Create a folder named Infrastructure and implement the in-memory repository.
+ **In-Memory Repository** 
+ - Create a folder named Infrastructure and implement the in-memory repository.
 	
 ```csharp 
 public class InMemoryBookRepository : IBookRepository
@@ -250,13 +249,11 @@ public class BooksController : ControllerBase
     }
 }
 ```
-5.) **Dependency Injection Setup**  
+5.) **Dependency Injection Setup** 	
+  - To properly configure dependency injection in your ASP.NET Core application using Startup.cs or Program.cs (depending on the version of .NET you're using), here’s how you can set it up for the Library Management System API.
 	
-	- To properly configure dependency injection in your ASP.NET Core application using Startup.cs or Program.cs (depending on the version of .NET you're using), here’s how you can set it up for the Library Management System API.
-	
-	**For .NET 6 and Later: Using Program.cs**
-	
-	- If you're using .NET 6 or later, the Startup.cs class is typically replaced by a simplified Program.cs file. Here’s how to configure dependency injection in that case:
+  **For .NET 6 and Later: Using Program.cs**
+  - If you're using .NET 6 or later, the Startup.cs class is typically replaced by a simplified Program.cs file. Here’s how to configure dependency injection in that case:
 
 ```csharp
 
@@ -306,25 +303,26 @@ app.Run();
 	
 	
   **Conclusion**
-    - This refactored code now uses the Repository pattern to manage data access through the InMemoryBookRepository and applies Clean Architecture principles by separating the application into layers (Domain, Application, Infrastructure, Presentation).
+  - This refactored code now uses the Repository pattern to manage data access through the InMemoryBookRepository and applies Clean Architecture principles by separating the application into layers (Domain, Application, Infrastructure, Presentation).
 
   **Maintainability:**
-   - Each component has a clear responsibility, making the code easier to understand and modify.
+  - Each component has a clear responsibility, making the code easier to understand and modify.
+  
   **Scalability:**
-   - New features can be added with minimal impact on existing code.
+  - New features can be added with minimal impact on existing code.
    
   **Testability:** 
-   - The separation of concerns allows for easier unit testing of individual components.
+  - The separation of concerns allows for easier unit testing of individual components.
 
 You can now build and test the API, which should work with in-memory data storage. If you have any further questions or need more adjustments, feel free to ask!
 	
   **Summary of Changes**
   
   **Dependency Injection:**
-   - The repository and service interfaces are registered with the DI container, ensuring they can be injected into your controllers.\
+  - The repository and service interfaces are registered with the DI container, ensuring they can be injected into your controllers.
    
-  **Swagger Configuration: **
-   - Swagger is set up to provide an interactive API documentation interface, making it easy to test your endpoints.
+  **Swagger Configuration:**
+  - Swagger is set up to provide an interactive API documentation interface, making it easy to test your endpoints.
   
   **Testing the API**
  
