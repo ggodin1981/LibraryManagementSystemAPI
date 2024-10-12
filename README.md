@@ -17,11 +17,11 @@ We'll organize the project into different layers:
 5. **Access the Singleton Instance**
    - Provide a way to access the single instance of the Library Service class.
 
-1 - **Domain Layer** 
+1.)  **Domain Layer** 
 
-    - **Entities** Create a folder named Domain and define the Book entity.
-```csharp
- // Domain/Entities/Book.cs
+    **Entities** 
+	- Create a folder named Domain and define the Book entity.
+```csharp  
 public class Book
 {
     public int Id { get; set; }
@@ -32,6 +32,7 @@ public class Book
 }
 ```
   **Interfaces** 
+  
  ```csharp
 
 public interface IBookRepository
@@ -42,9 +43,10 @@ public interface IBookRepository
     void Update(Book book);
 }
  ```
-2 - **Application Layer** 
+2.) **Application Layer** 
  
-	 -**Services** Create a folder named Application and define a service for library operations.
+	 **Services** 
+	 - Create a folder named Application and define a service for library operations.
     
   ```csharp
 
@@ -119,8 +121,10 @@ public class LibraryService : ILibraryService
 }
    ```
 
-  -**DTOs** Create a DTO for book operations.
-    ```csharp
+**DTOs
+
+   ** Create a DTO for book operations.
+```csharp
 public class BookDto
 {
     public string Title { get; set; }
@@ -129,8 +133,11 @@ public class BookDto
 }
  ```
  
-3. - **Infrastructure Layer**
-    -**In-Memory Repository** Create a folder named Infrastructure and implement the in-memory repository.
+3. **Infrastructure Layer**
+
+    **In-Memory Repository** 
+	 - Create a folder named Infrastructure and implement the in-memory repository.
+	
 	```csharp
  
 public class InMemoryBookRepository : IBookRepository
@@ -184,8 +191,10 @@ public class InMemoryBookRepository : IBookRepository
 }
 
 	```
-4. - **Presentation Layer**
-   -**Controllers** Update the controller to use the ILibraryService.
+4. **Presentation Layer**
+
+    **Controllers** 
+	- Update the controller to use the ILibraryService.
    ```csharp
    // Presentation/Controllers/BooksController.cs
 [ApiController]
@@ -241,12 +250,13 @@ public class BooksController : ControllerBase
     }
 }
    ```
-5. - **Dependency Injection Setup**  
+5. **Dependency Injection Setup**  
 	
-	To properly configure dependency injection in your ASP.NET Core application using Startup.cs or Program.cs (depending on the version of .NET you're using), here’s how you can set it up for the Library Management System API.
+	- To properly configure dependency injection in your ASP.NET Core application using Startup.cs or Program.cs (depending on the version of .NET you're using), here’s how you can set it up for the Library Management System API.
 	
-	-**For .NET 6 and Later: Using Program.cs**
-	If you're using .NET 6 or later, the Startup.cs class is typically replaced by a simplified Program.cs file. Here’s how to configure dependency injection in that case:
+	**For .NET 6 and Later: Using Program.cs**
+	
+	- If you're using .NET 6 or later, the Startup.cs class is typically replaced by a simplified Program.cs file. Here’s how to configure dependency injection in that case:
 
 	```csharp
 	 using Microsoft.AspNetCore.Builder;
@@ -295,17 +305,22 @@ app.Run();
 	
 	
 **Conclusion**
-This refactored code now uses the Repository pattern to manage data access through the InMemoryBookRepository and applies Clean Architecture principles by separating the application into layers (Domain, Application, Infrastructure, Presentation).
+- This refactored code now uses the Repository pattern to manage data access through the InMemoryBookRepository and applies Clean Architecture principles by separating the application into layers (Domain, Application, Infrastructure, Presentation).
 
--**Maintainability: Each component has a clear responsibility, making the code easier to understand and modify.**
--**Scalability: New features can be added with minimal impact on existing code.**
--**Testability: The separation of concerns allows for easier unit testing of individual components.**
+**Maintainability:**
+- Each component has a clear responsibility, making the code easier to understand and modify.
+**Scalability:**
+- New features can be added with minimal impact on existing code.
+**Testability:** 
+- The separation of concerns allows for easier unit testing of individual components.
 
 You can now build and test the API, which should work with in-memory data storage. If you have any further questions or need more adjustments, feel free to ask!
 	
 **Summary of Changes**
-  -**Dependency Injection: The repository and service interfaces are registered with the DI container, ensuring they can be injected into your controllers.**
-  -**Swagger Configuration: Swagger is set up to provide an interactive API documentation interface, making it easy to test your endpoints.**
+  **Dependency Injection:**
+- The repository and service interfaces are registered with the DI container, ensuring they can be injected into your controllers.
+  **Swagger Configuration: **
+- Swagger is set up to provide an interactive API documentation interface, making it easy to test your endpoints.
   
  **Testing the API**
  
