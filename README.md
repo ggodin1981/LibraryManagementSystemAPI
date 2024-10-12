@@ -196,7 +196,6 @@ public class InMemoryBookRepository : IBookRepository
     **Controllers** 
 	- Update the controller to use the ILibraryService.
    ```csharp
-   // Presentation/Controllers/BooksController.cs
 [ApiController]
 [Route("api/[controller]")]
 public class BooksController : ControllerBase
