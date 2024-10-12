@@ -2,6 +2,7 @@ using LibraryManagementSystem.Interface;
 using LibraryManagementSystem.Model;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace LibraryManagementSystemAPI.Controllers
 {
@@ -16,20 +17,25 @@ namespace LibraryManagementSystemAPI.Controllers
             _libraryService = libraryService;
         }
 
-        [HttpPost]
+       
         [SwaggerOperation(Summary = "Add a new book", Description = "Adds a book with title, author, and ISBN.")]
         [SwaggerResponse(200, "Book added successfully.")]
         /// <summary>
         ///Add a new book
         /// </summary>
-        public IActionResult AddBook([FromBody] BookDto bookDto)
+        [HttpPost]
+        public IActionResult AddBook([FromBody] BookDto book)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            _libraryService.AddBook(bookDto);
-            return Ok("Book added successfully.");
+            if (book == null || string.IsNullOrWhiteSpace(book.Title) || string.IsNullOrWhiteSpace(book.Author))
+            {
+                return BadRequest("Invalid book data.");
+            }
+            var newBook = _libraryService.AddBook(book);         
+            return Ok(newBook);
         }
 
         [HttpPut("{id}/borrow")]
@@ -65,6 +71,17 @@ namespace LibraryManagementSystemAPI.Controllers
             }
             return Ok("Book returned successfully.");
         }
+        [SwaggerOperation(Summary = "Get By Id", Description = "Get Book by id")]
+        [HttpGet("{id}")]
+        public IActionResult GetBook(int id)
+        {
+            var book = _libraryService.GetById(id);
+            if (book == null)
+            {
+                return NotFound("Book not found.");
+            }
+            return Ok(book);
+        }
 
         [HttpGet]
         [SwaggerOperation(Summary = "List all books", Description = "Marks a book as returned.")]
@@ -77,6 +94,4 @@ namespace LibraryManagementSystemAPI.Controllers
             return Ok(books);
         }
     }
-
-
 }

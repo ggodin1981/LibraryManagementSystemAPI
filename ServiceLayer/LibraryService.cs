@@ -12,7 +12,13 @@ namespace LibraryManagementSystem.ServiceLayer
             _bookRepository = bookRepository;
         }
 
-        public void AddBook(BookDto bookDto)
+        public Book GetById(int id)
+        {
+            var book = _bookRepository.GetById(id);
+            return book;
+        }
+
+        public Book AddBook(BookDto bookDto)
         {
             var book = new Book
             {
@@ -23,6 +29,7 @@ namespace LibraryManagementSystem.ServiceLayer
                 IsBorrowed = false
             };
             _bookRepository.Add(book);
+            return book;
         }
 
         public BookDto BorrowBook(int id)
@@ -72,6 +79,5 @@ namespace LibraryManagementSystem.ServiceLayer
             return allBooks.Any() ? allBooks.Max(b => b.Id) + 1 : 1;
         }
     }
-
 
 }

@@ -9,9 +9,5 @@ namespace LibraryManagementSystem.Interface
         Book GetById(int id);
         IEnumerable<Book> GetAll();
         void Update(Book book);
-    }
-
-
-    
-
+    }   
 }

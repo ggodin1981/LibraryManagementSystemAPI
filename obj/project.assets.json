@@ -500,11 +500,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GGTECH I.T. Solution\\source\\repos\\LibraryManagementSystemAPI\\LibraryManagementSystemAPI.csproj",
+      "projectUniqueName": "C:\\Users\\GGTECH I.T. Solution\\OneDrive\\Documents\\GitHub\\LibraryManagementSystemAPI\\LibraryManagementSystemAPI.csproj",
       "projectName": "LibraryManagementSystemAPI",
-      "projectPath": "C:\\Users\\GGTECH I.T. Solution\\source\\repos\\LibraryManagementSystemAPI\\LibraryManagementSystemAPI.csproj",
+      "projectPath": "C:\\Users\\GGTECH I.T. Solution\\OneDrive\\Documents\\GitHub\\LibraryManagementSystemAPI\\LibraryManagementSystemAPI.csproj",
       "packagesPath": "C:\\Users\\GGTECH I.T. Solution\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\GGTECH I.T. Solution\\source\\repos\\LibraryManagementSystemAPI\\obj\\",
+      "outputPath": "C:\\Users\\GGTECH I.T. Solution\\OneDrive\\Documents\\GitHub\\LibraryManagementSystemAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
