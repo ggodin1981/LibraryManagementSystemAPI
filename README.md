@@ -1,10 +1,36 @@
 ## **Library Management System API**
 To implement the Repository pattern and refactor the Library Management System API using Clean Architecture principles, we will structure the application into layers, separating concerns and improving maintainability, testability, and scalability. Here's how you can achieve this:
 
----
-## **Project Structure**
+## **Enhanced Requirements:**
 
-We'll organize the project into different layers:
+1. **Book Class:**
+   - Add properties: Id, Title, Author, ISBN, and IsBorrowed.
+   
+3. **Library Operations:**
+  - Implement the Singleton pattern for the Library class.
+  - Add methods for:
+	- Adding a book.
+  	- Borrowing a book.
+   	- Returning a book.
+    	- Listing all books (with borrowed status).
+     	- Get a Book By Id
+3. **API Endpoints:**
+   - Add a book (POST /api/books).
+   - Borrow a book (PUT /api/books/{id}/borrow).
+   - Return a book (PUT /api/books/{id}/return).
+   - List all books (GET /api/books).
+   - Get a specific book (GET /api/books/{id}).
+4. **Design Patterns:**
+   - Use the Singleton pattern for managing the library instance.
+   - Implement the Repository pattern to handle data access.
+   - Use Clean Architecture with layers for Domain, Application, and Infrastructure.
+
+5. **Error Handling:**
+   - Add meaningful error responses for scenarios like book not found, invalid book data, or book already borrowed.
+
+---
+
+## **Organize the project into different layers:**
 
 1. **Domain Layer** 
    - Contains core business logic and entities.
@@ -21,6 +47,8 @@ We'll organize the project into different layers:
 
    **Entities** 
    - Create a folder named Domain and define the Book entity.
+
+  **Enhanced Code:**
    
 ```csharp  
 public class Book
@@ -299,7 +327,25 @@ app.MapControllers();
 
 app.Run();
 ```
-	
+
+  ## **Key Enhancements:**
+  
+  **Repository Pattern:**   
+  - IBookRepository separates data access logic from business logic, making it easier to switch out storage implementations (e.g., in-memory, database).
+     
+  **Singleton:**
+  - The LibraryService ensures there is only one instance of the service, which uses the repository for data operations.
+     
+  **Error Handling:**
+  - Added validation and proper HTTP responses for errors like invalid book data, book not found, and already borrowed or returned books.
+    
+  **Clean Architecture:**
+  - Separation of concerns with domain models, service layer (application), and controllers (presentation layer).
+    
+  **Pattern:**
+  - The Library Service handles book GetNextId with unique IDs.
+    
+ 
 	
   ## **Conclusion**
   - This refactored code now uses the Repository pattern to manage data access through the InMemoryBookRepository and applies Clean Architecture principles by separating the application into layers (Domain, Application, Infrastructure, Presentation).
