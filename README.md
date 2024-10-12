@@ -301,7 +301,7 @@ app.Run();
 ```
 	
 	
-  **Conclusion**
+  ## **Conclusion**
   - This refactored code now uses the Repository pattern to manage data access through the InMemoryBookRepository and applies Clean Architecture principles by separating the application into layers (Domain, Application, Infrastructure, Presentation).
 
   **Maintainability:**
@@ -314,8 +314,12 @@ app.Run();
   - The separation of concerns allows for easier unit testing of individual components.
 
 You can now build and test the API, which should work with in-memory data storage. If you have any further questions or need more adjustments, feel free to ask!
+
+
+
+
 	
-  **Summary of Changes**
+  ## **Summary of Changes**
   
   **Dependency Injection:**
   - The repository and service interfaces are registered with the DI container, ensuring they can be injected into your controllers.
@@ -324,6 +328,7 @@ You can now build and test the API, which should work with in-memory data storag
   - Swagger is set up to provide an interactive API documentation interface, making it easy to test your endpoints.
   
   **Testing the API**
+  
  
  Once you've set up the Program.cs, you can run your application and navigate to http://localhost:<port>/swagger to see the Swagger UI, which will allow you to interact with your API endpoints.
 
