@@ -19,8 +19,9 @@ We'll organize the project into different layers:
 
 1.)  **Domain Layer** 
 
-    **Entities** 
-	- Create a folder named Domain and define the Book entity.
+   **Entities** 
+   - Create a folder named Domain and define the Book entity.
+   
 ```csharp  
 public class Book
 {
@@ -33,7 +34,7 @@ public class Book
 ```
   **Interfaces** 
   
- ```csharp
+```csharp
 
 public interface IBookRepository
 {
@@ -42,13 +43,13 @@ public interface IBookRepository
     IEnumerable<Book> GetAll();
     void Update(Book book);
 }
- ```
+```
 2.) **Application Layer** 
  
-	 **Services** 
-	 - Create a folder named Application and define a service for library operations.
+	**Services** 
+	- Create a folder named Application and define a service for library operations.
     
-  ```csharp
+```csharp
 
 public class LibraryService : ILibraryService
 {
@@ -119,11 +120,12 @@ public class LibraryService : ILibraryService
         return allBooks.Any() ? allBooks.Max(b => b.Id) + 1 : 1;
     }
 }
-   ```
+```
 
-**DTOs
+ **DTOs**
 
-   ** Create a DTO for book operations.
+   ** Create a DTO for book operations.**
+   
 ```csharp
 public class BookDto
 {
@@ -131,15 +133,14 @@ public class BookDto
     public string Author { get; set; }
     public string ISBN { get; set; }
 }
- ```
+```
  
-3. **Infrastructure Layer**
+3.) **Infrastructure Layer**
 
     **In-Memory Repository** 
 	 - Create a folder named Infrastructure and implement the in-memory repository.
 	
-	```csharp
- 
+```csharp 
 public class InMemoryBookRepository : IBookRepository
 {
     private readonly List<Book> _books;
@@ -189,13 +190,13 @@ public class InMemoryBookRepository : IBookRepository
         }
     }
 }
-
-	```
+```
 4. **Presentation Layer**
 
     **Controllers** 
 	- Update the controller to use the ILibraryService.
-   ```csharp
+	
+```csharp
 [ApiController]
 [Route("api/[controller]")]
 public class BooksController : ControllerBase
@@ -248,8 +249,8 @@ public class BooksController : ControllerBase
         return Ok(books);
     }
 }
-   ```
-5. **Dependency Injection Setup**  
+```
+5.) **Dependency Injection Setup**  
 	
 	- To properly configure dependency injection in your ASP.NET Core application using Startup.cs or Program.cs (depending on the version of .NET you're using), here’s how you can set it up for the Library Management System API.
 	
@@ -257,8 +258,9 @@ public class BooksController : ControllerBase
 	
 	- If you're using .NET 6 or later, the Startup.cs class is typically replaced by a simplified Program.cs file. Here’s how to configure dependency injection in that case:
 
-	```csharp
-	 using Microsoft.AspNetCore.Builder;
+```csharp
+
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Application.Services; // Adjust namespace as necessary
@@ -303,25 +305,28 @@ app.Run();
 	```
 	
 	
-**Conclusion**
-- This refactored code now uses the Repository pattern to manage data access through the InMemoryBookRepository and applies Clean Architecture principles by separating the application into layers (Domain, Application, Infrastructure, Presentation).
+  **Conclusion**
+    - This refactored code now uses the Repository pattern to manage data access through the InMemoryBookRepository and applies Clean Architecture principles by separating the application into layers (Domain, Application, Infrastructure, Presentation).
 
-**Maintainability:**
-- Each component has a clear responsibility, making the code easier to understand and modify.
-**Scalability:**
-- New features can be added with minimal impact on existing code.
-**Testability:** 
-- The separation of concerns allows for easier unit testing of individual components.
+  **Maintainability:**
+   - Each component has a clear responsibility, making the code easier to understand and modify.
+  **Scalability:**
+   - New features can be added with minimal impact on existing code.
+   
+  **Testability:** 
+   - The separation of concerns allows for easier unit testing of individual components.
 
 You can now build and test the API, which should work with in-memory data storage. If you have any further questions or need more adjustments, feel free to ask!
 	
-**Summary of Changes**
-  **Dependency Injection:**
-- The repository and service interfaces are registered with the DI container, ensuring they can be injected into your controllers.
-  **Swagger Configuration: **
-- Swagger is set up to provide an interactive API documentation interface, making it easy to test your endpoints.
+  **Summary of Changes**
   
- **Testing the API**
+  **Dependency Injection:**
+   - The repository and service interfaces are registered with the DI container, ensuring they can be injected into your controllers.\
+   
+  **Swagger Configuration: **
+   - Swagger is set up to provide an interactive API documentation interface, making it easy to test your endpoints.
+  
+  **Testing the API**
  
  Once you've set up the Program.cs, you can run your application and navigate to http://localhost:<port>/swagger to see the Swagger UI, which will allow you to interact with your API endpoints.
 
