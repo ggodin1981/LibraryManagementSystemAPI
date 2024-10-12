@@ -19,7 +19,7 @@ We'll organize the project into different layers:
 
 1.)  **Domain Layer** 
 
-   **Entities** 
+    **Entities** 
    - Create a folder named Domain and define the Book entity.
    
 ```csharp  
@@ -46,8 +46,9 @@ public interface IBookRepository
 
 2.) **Application Layer** 
  
-	**Services** 
-	- Create a folder named Application and define a service for library operations.
+    <strong>Services</strong>
+    **Services** 
+   - Create a folder named Application and define a service for library operations.
     
 ```csharp
 public class LibraryService : ILibraryService
